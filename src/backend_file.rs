@@ -26,9 +26,9 @@ impl BackendFile {
 
       file = res;
     } else {
-      let res = match fs::File::open(path) {
+      let res = match fs::File::create(path) {
         Ok(res) => res,
-        Err(res) => panic!("could not open file")
+        Err(res) => panic!("could not create file")
       };
 
       file = res;
