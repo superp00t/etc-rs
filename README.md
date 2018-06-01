@@ -5,6 +5,15 @@
 [Etc in JavaScript](https://github.com/superp00t/etc-js)
 
 # Usage
+
+Add to Cargo.toml:
+```toml
+[dependencies]
+etc-rs = { git = "https://github.com/superp00t/etc-rs.git", branch = "master" }
+```
+
+main.rs:
+
 ```rust
 extern crate etc_rs;
 
