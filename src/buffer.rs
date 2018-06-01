@@ -30,6 +30,22 @@ pub struct Buffer {
     backend: Box<Backend>,
 }
 
+impl io::Write for Buffer {
+  fn write(&mut self, data: &[u8]) -> io::Result<usize> {
+    return self.write(data);
+  }
+
+  fn flush(&mut self) -> io::Result<()> {
+    return self.flush();
+  } 
+}
+
+impl io::Read for Buffer {
+  fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
+    return self.read(buf);
+  }
+}
+
 impl Buffer {
     pub fn new() -> Buffer {
         let buf = backend_mem::BackendMem::new();
